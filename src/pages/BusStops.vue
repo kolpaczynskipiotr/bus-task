@@ -1,17 +1,14 @@
 <template>
-  <div>
-    <AppCard>
+  <div class="stops">
+    <AppCard class="stops__card">
+      <InputSearch class="stops__search" v-model="searchText" />
       <AppTable>
         <template #thead>
           <tr>
             <th>Bus stops</th>
           </tr>
         </template>
-        <tr
-          v-for="(stop, index) in busStops"
-          :key="`${stop}-${index}`"
-          @click="selectedStop = stop"
-        >
+        <tr v-for="(stop, index) in filteredBusStops" :key="`${stop}-${index}`">
           {{
             stop
           }}
@@ -24,12 +21,24 @@
 <script lang="ts" setup>
 import AppTable from "@/components/AppTable/AppTable.vue";
 import AppCard from "@/components/AppCard/AppCard.vue";
-import { computed } from "vue";
+import InputSearch from "@/components/InputSearch/InputSearch.vue";
+
+import { computed, ref } from "vue";
 import { useStore } from "vuex";
+
+const searchText = ref("");
 
 const store = useStore();
 
-const busStops = computed(() => store.state.stops);
+const busStops = computed(() => store.state.stops ?? []);
+
+const filteredBusStops = computed(() =>
+  searchText.value && busStops.value.length
+    ? busStops.value.filter((item: string) =>
+        item.toLowerCase().startsWith(searchText.value)
+      )
+    : busStops.value
+);
 
 const fetchTimetable = async () => {
   if (store.getters.hasStops) {
@@ -42,4 +51,16 @@ const fetchTimetable = async () => {
 fetchTimetable();
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.stops {
+  &__card {
+    max-height: 676px;
+    overflow-y: auto;
+    padding: 0;
+  }
+
+  &__search {
+    padding: $spacer-sm $spacer-sm $spacer-md;
+  }
+}
+</style>

@@ -1,4 +1,3 @@
-import AppTabs from './components/AppTabs.vue';
 <template>
   <div class="app container">
     <h1 class="app__title mt-5 mb-4">Timetable</h1>

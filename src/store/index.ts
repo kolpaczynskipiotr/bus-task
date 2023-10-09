@@ -8,11 +8,11 @@ const { getTimetable } = useApi();
 export default createStore({
   state: {
     timetable: {} as Record<string, Stop[]>,
-    stops: null as Set<string> | null,
+    stops: [] as string[],
   },
   getters: {
     hasStops(state) {
-      return !!state.stops?.size;
+      return !!state.stops?.length;
     },
     hasTimeline(state) {
       return !!Object.values(state.timetable)?.length;
@@ -60,7 +60,14 @@ export default createStore({
   mutations: {
     setTimetable(state, value: Stop[]) {
       state.timetable = normalizeData<Stop>(value, "line");
-      state.stops = new Set(value.map((item) => item.stop));
+      state.stops = value.reduce((sum: string[], item: Stop) => {
+        if (sum.includes(item.stop)) {
+          return sum;
+        }
+
+        sum.push(item.stop);
+        return sum;
+      }, []);
     },
   },
   actions: {

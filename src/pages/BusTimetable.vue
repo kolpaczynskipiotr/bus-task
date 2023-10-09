@@ -31,11 +31,15 @@
           <tr
             v-for="(stop, index) in busStops"
             :key="`${stop}-${index}`"
-            @click="selectedStop = stop"
+            class="timetable__stop"
           >
-            {{
-              stop
-            }}
+            <button
+              @click="selectedStop = stop"
+              class="timetable__stop-btn"
+              :class="{ 'timetable__stop--active': stop === selectedStop }"
+            >
+              {{ stop }}
+            </button>
           </tr>
         </AppTable>
       </AppCard>
@@ -111,6 +115,25 @@ fetchTimetable();
   &__title {
     display: block;
     margin: $spacer-xl $spacer-xl 0;
+  }
+
+  &__stop {
+    padding: 0;
+
+    &-btn {
+      border: 0;
+      text-align: left;
+      padding: $spacer-md $spacer-xl;
+      background: transparent;
+    }
+
+    &--active {
+      color: $text-active;
+    }
+  }
+
+  &__row {
+    cursor: pointer;
   }
 
   &__lines {
