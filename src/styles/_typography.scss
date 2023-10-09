@@ -1,0 +1,18 @@
+$typo-2xl: 2rem;
+$typo-xl: 1.5rem;
+$typo-lg: 1.25rem;
+$typo-md: 1rem;
+$typo-sm: 0.875rem;
+$typo-xs: 0.5rem;
+
+@mixin title-1 {
+  font-weight: 600;
+  font-size: $typo-xl;
+  line-height: 32px;
+}
+
+@mixin title-2 {
+  font-size: $typo-lg;
+  font-weight: 600;
+  line-height: 24px;
+}

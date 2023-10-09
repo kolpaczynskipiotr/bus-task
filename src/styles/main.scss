@@ -1,0 +1,36 @@
+@import "colors.scss";
+@import "mixins.scss";
+@import "typography.scss";
+@import "spacers.scss";
+
+:root {
+  --bs-heading-color: $text-primary;
+}
+
+body {
+  background-color: $bg-primary;
+  max-width: 1376px;
+  margin: 0 auto;
+  padding: 0 $spacer-xs;
+}
+
+.title-1,
+h1 {
+  @include title-1;
+}
+
+.title-2,
+h2 {
+  @include title-2;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span {
+  color: $text-primary;
+}
