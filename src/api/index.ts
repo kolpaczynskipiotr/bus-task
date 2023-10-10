@@ -2,7 +2,7 @@ import { Stop } from "@/types/api.types";
 import { useHTTP } from "./client";
 
 const http = useHTTP({
-  baseURL: "http://localhost:3000", // @todo: add env variable
+  baseURL: process.env.VUE_APP_API_URL,
 });
 
 export default function () {

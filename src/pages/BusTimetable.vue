@@ -78,17 +78,18 @@ import AppPlaceholder from "@/components/AppPlaceholder/AppPlaceholder.vue";
 
 import { useStore } from "vuex";
 import { computed, ref } from "vue";
+import { Stop } from "@/types/api.types";
 
 const selectedBusLine = ref();
 const selectedStop = ref();
 
 const store = useStore();
 
-const lines = computed(() => store.getters.getBusLines);
-const busStops = computed(() =>
+const lines = computed<string[]>(() => store.getters.getBusLines);
+const busStops = computed<Stop>(() =>
   store.getters.getBusStops(selectedBusLine.value)
 );
-const stopTimeline = computed(() =>
+const stopTimeline = computed<string[]>(() =>
   store.getters.getStopTimeline(selectedBusLine.value, selectedStop.value)
 );
 

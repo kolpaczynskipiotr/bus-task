@@ -40,7 +40,7 @@ const store = useStore();
 
 const busStops = computed(() => store.state.stops ?? []);
 
-const filteredBusStops = computed(() =>
+const filteredBusStops = computed<string[]>(() =>
   searchText.value && busStops.value.length
     ? busStops.value.filter((item: string) =>
         item.toLowerCase().startsWith(searchText.value)

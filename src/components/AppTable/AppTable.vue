@@ -9,8 +9,6 @@
   </table>
 </template>
 
-<script setup lang="ts"></script>
-
 <style lang="scss" scoped>
 thead {
   :slotted(th) {
