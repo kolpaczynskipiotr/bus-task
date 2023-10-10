@@ -25,7 +25,7 @@
         <AppTable>
           <template #thead>
             <tr>
-              <th>Bus stops</th>
+              <th>Bus Stops</th>
             </tr>
           </template>
           <tr
@@ -63,8 +63,8 @@
           </tr>
         </AppTable>
       </AppCard>
-      <AppPlaceholder v-else class="timetable__card"
-        >Please select the bus line first
+      <AppPlaceholder v-else class="timetable__card">
+        Please select the bus line first
       </AppPlaceholder>
     </div>
   </div>
@@ -93,7 +93,7 @@ const stopTimeline = computed<string[]>(() =>
   store.getters.getStopTimeline(selectedBusLine.value, selectedStop.value)
 );
 
-const selectBusLine = (line: number) => {
+const selectBusLine = (line: string) => {
   if (selectedBusLine.value === line) {
     return;
   }
@@ -147,8 +147,10 @@ fetchTimetable();
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
+    min-height: 31px;
     max-height: 160px;
     overflow-y: auto;
+    margin-top: $spacer-sm;
   }
 
   &__card {

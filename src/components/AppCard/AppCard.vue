@@ -31,9 +31,9 @@ defineProps({
     top: 0;
     background-color: $fg-primary;
     border: none;
-    padding: 0 0 $spacer-lg 0;
+    padding: 0 0 $spacer-md 0;
     font-weight: 600;
-    font-size: $typo-md;
+    font-size: $typo-sm;
   }
 
   &__body {

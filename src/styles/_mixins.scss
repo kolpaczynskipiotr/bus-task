@@ -1,7 +1,7 @@
 @mixin dashed-border($color) {
   // Custom border generator
   // https://css-tricks.com/more-control-over-css-borders-with-background-image/
-  $border: $color, $color 30px, transparent 30px, transparent 48px, $color 48px;
+  $border: $color, $color 30px, transparent 30px, transparent 60px, $color 48px;
 
   background-image: repeating-linear-gradient($border),
     repeating-linear-gradient(90deg, $border),

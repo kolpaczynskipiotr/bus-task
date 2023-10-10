@@ -5,7 +5,7 @@
       <AppTable>
         <template #thead>
           <tr>
-            <th>Bus stops</th>
+            <th>Bus Stops</th>
           </tr>
         </template>
         <template v-if="filteredBusStops.length">

@@ -3,7 +3,7 @@ $typo-xl: 1.5rem;
 $typo-lg: 1.25rem;
 $typo-md: 1rem;
 $typo-sm: 0.875rem;
-$typo-xs: 0.5rem;
+$typo-xs: 0.75rem;
 
 @mixin title-1 {
   font-weight: 600;
@@ -12,7 +12,7 @@ $typo-xs: 0.5rem;
 }
 
 @mixin title-2 {
-  font-size: $typo-lg;
+  font-size: $typo-md;
   font-weight: 600;
   line-height: 24px;
 }

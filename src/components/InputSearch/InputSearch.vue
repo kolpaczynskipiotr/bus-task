@@ -34,7 +34,7 @@ defineEmits(["update:modelValue"]);
     min-height: 40px;
     border: 1px solid $border-primary;
     border-radius: $spacer-xs;
-    font-size: $typo-sm;
+    font-size: $typo-xs;
     padding: 0 $spacer-md;
   }
 }

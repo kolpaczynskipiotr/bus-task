@@ -22,9 +22,13 @@ defineProps({
 
 <style lang="scss" scoped>
 .btn {
-  $btn-primary-active: #2e3e6e;
-
   &-primary {
+    background-color: $btn-primary;
+
+    &:hover {
+      background-color: $btn-primary-hover;
+    }
+
     &.active {
       border: $btn-primary-active;
       background-color: $btn-primary-active;

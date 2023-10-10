@@ -1,5 +1,5 @@
 <template>
-  <span class="app-placeholder"> <slot /> </span>
+  <p class="app-placeholder"><slot /></p>
 </template>
 
 <style scoped lang="scss">
@@ -11,6 +11,7 @@
   width: 100%;
   color: $text-secondary;
   background: $fg-primary;
+  border-radius: 2px;
 
   @include dashed-border($text-unactive);
 }

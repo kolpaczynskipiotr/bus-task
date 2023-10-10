@@ -36,6 +36,7 @@ const isActive = computed(() =>
     min-width: 120px;
     text-align: center;
     color: $text-unactive;
+    font-size: $typo-sm;
     --bs-nav-link-color: $text-unactive;
 
     &.active {
