@@ -8,10 +8,18 @@
             <th>Bus stops</th>
           </tr>
         </template>
-        <tr v-for="(stop, index) in filteredBusStops" :key="`${stop}-${index}`">
-          {{
-            stop
-          }}
+        <template v-if="filteredBusStops.length">
+          <tr
+            v-for="(stop, index) in filteredBusStops"
+            :key="`${stop}-${index}`"
+          >
+            {{
+              stop
+            }}
+          </tr>
+        </template>
+        <tr v-else>
+          No results
         </tr>
       </AppTable>
     </AppCard>

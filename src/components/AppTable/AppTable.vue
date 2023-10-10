@@ -14,9 +14,10 @@
 <style lang="scss" scoped>
 thead {
   :slotted(th) {
+    font-size: $typo-sm;
     padding: $spacer-md $spacer-xl;
-    font-size: $typo-md;
     font-weight: 600;
+    color: $text-primary;
   }
 }
 
@@ -26,9 +27,13 @@ tbody {
     width: 100%;
     width: 100%;
     padding: $spacer-md $spacer-xl;
+    font-size: $typo-sm;
+    transition: 0.3s ease-in;
+    border-bottom: 1px solid $border-primary;
 
     &:hover {
       background-color: $fg-secondary;
+      transition: 0.3s ease-in;
     }
   }
 }

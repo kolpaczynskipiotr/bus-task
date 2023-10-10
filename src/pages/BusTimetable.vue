@@ -51,6 +51,11 @@
           <span class="timetable__title">Bus stop: {{ selectedStop }}</span>
         </template>
         <AppTable>
+          <template #thead>
+            <tr>
+              <th>Time</th>
+            </tr>
+          </template>
           <tr v-for="(time, index) in stopTimeline" :key="`${time}-${index}`">
             {{
               time
@@ -125,6 +130,7 @@ fetchTimetable();
       text-align: left;
       padding: $spacer-md $spacer-xl;
       background: transparent;
+      color: $text-primary;
     }
 
     &--active {
@@ -148,9 +154,11 @@ fetchTimetable();
     max-width: 100%;
     margin: 0;
     padding: 0;
-    height: 444px;
+    min-height: 444px;
+    max-height: 444px;
     overflow-y: auto;
     flex: 1;
+    margin-bottom: $spacer-md;
   }
 
   &__line {

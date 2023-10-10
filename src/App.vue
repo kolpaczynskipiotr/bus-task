@@ -1,9 +1,11 @@
 <template>
   <div class="app container">
-    <h1 class="app__title mt-5 mb-4">Timetable</h1>
+    <router-link class="app__title" to="/">
+      <h1 class="=mt-5 mb-4">Timetable</h1>
+    </router-link>
     <AppTabs>
-      <AppTab href="/">Bus Lines</AppTab>
-      <AppTab href="/stops">Stops</AppTab>
+      <AppTab to="/">Bus Lines</AppTab>
+      <AppTab to="/stops">Stops</AppTab>
     </AppTabs>
     <router-view></router-view>
   </div>
@@ -16,4 +18,15 @@ import AppTab from "@/components/AppTabs/AppTab.vue";
 
 <style lang="scss">
 @import "./styles/main.scss";
+</style>
+
+<style lang="scss" scoped>
+.app {
+  &__title {
+    display: block;
+    margin-top: $spacer-3xl;
+    text-decoration: none;
+    color: $text-primary;
+  }
+}
 </style>

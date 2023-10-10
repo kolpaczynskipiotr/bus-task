@@ -1,13 +1,13 @@
 <template>
   <li class="app-tab nav-item">
-    <a
+    <router-link
       class="app-tab__link nav-link"
       :aria-current="isActive"
-      :href="href"
+      :to="to"
       :class="{ active: isActive }"
     >
       <slot />
-    </a>
+    </router-link>
   </li>
 </template>
 
@@ -16,7 +16,7 @@ import { computed, defineProps } from "vue";
 import { useRoute } from "vue-router";
 
 const props = defineProps({
-  href: {
+  to: {
     type: String,
     default: "#",
   },
@@ -25,7 +25,7 @@ const props = defineProps({
 const route = useRoute();
 
 const isActive = computed(() =>
-  route.matched.some(({ path }) => path.startsWith(props.href))
+  route.matched.some(({ path }) => path === props.to)
 );
 </script>
 
