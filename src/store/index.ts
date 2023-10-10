@@ -60,14 +60,17 @@ export default createStore({
   mutations: {
     setTimetable(state, value: Stop[]) {
       state.timetable = normalizeData<Stop>(value, "line");
-      state.stops = value.reduce((sum: string[], item: Stop) => {
-        if (sum.includes(item.stop)) {
-          return sum;
-        }
 
-        sum.push(item.stop);
-        return sum;
-      }, []);
+      state.stops = value
+        .reduce((sum: string[], item: Stop) => {
+          if (sum.includes(item.stop)) {
+            return sum;
+          }
+
+          sum.push(item.stop);
+          return sum;
+        }, [])
+        .sort((a: string, b: string) => (b > a ? 1 : -1));
     },
   },
   actions: {
