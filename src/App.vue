@@ -1,5 +1,5 @@
 <template>
-  <div class="app container">
+  <div class="app">
     <router-link class="app__title" to="/">
       <h1 class="=mt-5 mb-4">Timetable</h1>
     </router-link>

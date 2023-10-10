@@ -62,7 +62,7 @@ fetchTimetable();
 <style lang="scss" scoped>
 .stops {
   &__card {
-    max-height: 676px;
+    height: 676px;
     overflow-y: auto;
     padding: 0;
   }
